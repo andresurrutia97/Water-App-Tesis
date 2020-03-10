@@ -1,0 +1,7 @@
+{
+  "name": "WaterApp2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

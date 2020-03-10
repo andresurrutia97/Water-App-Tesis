@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">
+      REGISTRO
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="font_mont">
+  <div class="contenido">
+    <div class="fecha">
+      Fecha de ingreso: {{ myDate | date: "MMM dd, yyyy - hh:mm a" }}
+    </div>
+    <div class="intro">
+      <b>Registro de información para el cálculo de la huella hídrica UAO</b>
+      <!-- <ion-icon
+        (click)="presentPopover($event)"
+        class="icon"
+        name="help-circle-outline"
+      ></ion-icon> -->
+    </div>
+  </div>
+  <div class="bg_titles">
+    <div class="datos">
+      DATOS HUELLA HÍDRICA AZUL
+    </div>
+  </div>
+
+  <div class="formulario">
+    <div class="font_mont">
+      Volumen agua subterranea (m<sup>3</sup>/h):
+    </div>
+    <div>
+      <ion-input
+        class="font_mont"
+        placeholder="Ingresar valor"
+        type="number"
+        [(ngModel)]="volAgua"
+      >
+      </ion-input>
+    </div>
+  </div>
+
+  <div class="bg_titles">
+    <div class="datos">
+      DATOS HUELLA HÍDRICA GRIS
+    </div>
+  </div>
+
+  <div>
+    <div class="formulario">
+      <div>
+        Caudal propio del vertimiento (m<sup>3</sup>/h ):
+      </div>
+      <div>
+        <ion-input
+          class="font_mont"
+          type="number"
+          placeholder="Ingresar valor"
+          [(ngModel)]="caudal"
+        ></ion-input>
+      </div>
+    </div>
+    <div class="formulario2">
+      <div class="mt-7">
+        Concentración promedio de contaminantes (g/m<sup>3</sup>):
+      </div>
+      <div class="formulario21">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="var">
+              <div>DBO<sup>5</sup>:</div>
+            </ion-col>
+            <ion-col class="input">
+              <ion-input
+                class="font_mont"
+                type="number"
+                placeholder="Ingresar valor"
+                [(ngModel)]="dbo5"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="var">
+              <div>SST:</div>
+            </ion-col>
+            <ion-col class="input">
+              <ion-input
+                class="font_mont"
+                type="number"
+                placeholder="Ingresar valor"
+                [(ngModel)]="sst"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="formulario2">
+      <div class="mt-7">
+        Concentración natural de contaminante en el río Lili (g/m<sup>3</sup>):
+      </div>
+      <div class="formulario21">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="var">
+              <div>DBO<sup>5</sup>:</div>
+            </ion-col>
+            <ion-col class="input">
+              <ion-input
+                class="font_mont"
+                type="number"
+                clearInput
+                placeholder="Ingresar valor"
+                [(ngModel)]="dbo5_2"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="var">
+              <div>SST:</div>
+            </ion-col>
+            <ion-col class="input">
+              <ion-input
+                class="font_mont"
+                clearInput
+                type="number"
+                placeholder="Ingresar valor"
+                [(ngModel)]="sst_2"
+              >
+              </ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+  <div class="send_button">
+    <ion-button
+      class="font_mont but"
+      color="primary"
+      (click)="presentAlertConfirm()"
+      >Enviar
+    </ion-button>
+  </div>
+</ion-content>
